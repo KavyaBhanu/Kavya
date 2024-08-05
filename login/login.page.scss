@@ -1,0 +1,25 @@
+/* Changes the ion-card-title color */
+ion-card-title {
+  color: #006400;
+}
+
+/* Styles for the ion-label elements */
+ion-label {
+  color: #006400 !important; /* Use !important to ensure override */
+}
+
+/* Styles for the submit button */
+ion-button {
+  --background: #006400; /* Changes the background color of the button */
+}
+
+/* Styles for the link */
+.resisterLink a {
+  color: #006400; /* Changes the color of the login link */
+}
+
+/* Optionally, if you want to change the ion-item color when focused or activated */
+ion-item.item-has-focus, ion-item.item-has-activated {
+  --highlight-background-focused: #006400; /* Background color when item is focused */
+  --highlight-color-focused: #fff; /* Text color when item is focused */
+}

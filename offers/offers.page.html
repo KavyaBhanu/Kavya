@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Special Offers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Offer 1: IPL 2024 Discount -->
+  <div class="offer">
+    <ion-item>
+      <ion-label>
+        <img src="assets/IPL.jpg" alt="IPL 2024 Discount">
+        <p>"Get ready for IPL 2024 with exciting discounts!"</p>
+        <p>Offer: 20% off on all IPL merchandise</p>
+      </ion-label>
+      <ion-button (click)="revealCode('IPL2024')">Reveal Code</ion-button>
+    </ion-item>
+    <p *ngIf="revealedCodes.includes('IPL2024')" class="code">Your Offer Code: <span class="code-color">IPL2024CODE</span></p>
+    <ion-button *ngIf="revealedCodes.includes('IPL2024')" (click)="useCode('IPL2024')" class="bold-button">Use Code</ion-button>
+    <p *ngIf="revealedCodes.includes('IPL2024')" class="validity">Valid till April 30th</p>
+  </div>
+
+  <!-- Offer 2: Summer Juice Discount -->
+  <div class="offer">
+    <ion-item>
+      <ion-label>
+        <img src="assets/juiceoffer.jpg" alt="Summer Juice Offer">
+        <p>"Beat the summer heat with refreshing juice offers!"</p>
+        <p>Offer: Buy 1 Get 1 Free on all Fresh juices</p>
+      </ion-label>
+      <ion-button (click)="revealCode('SummerJuice')">Reveal Code</ion-button>
+    </ion-item>
+    <p *ngIf="revealedCodes.includes('SummerJuice')" class="code">Your Offer Code: <span class="code-color">SummerJuiceCODE</span></p>
+    <ion-button *ngIf="revealedCodes.includes('SummerJuice')" (click)="useCode('SummerJuice')" class="bold-button">Use Code</ion-button>
+    <p *ngIf="revealedCodes.includes('SummerJuice')" class="validity">4 days left</p>
+  </div>
+
+  <!-- Offer 3: Additional Discount Offer -->
+  <div class="offer">
+    <ion-item>
+      <ion-label>
+        <img src="assets/123offer.jpg" alt="Additional Discount Offer">
+        <p>"Special discount just for you!"</p>
+        <p>Offer: 25% off on selected items</p>
+      </ion-label>
+      <ion-button (click)="revealCode('AdditionalDiscount')">Reveal Code</ion-button>
+    </ion-item>
+    <p *ngIf="revealedCodes.includes('AdditionalDiscount')" class="code">Your Offer Code: <span class="code-color">AdditionalDiscountCODE</span></p>
+    <p *ngIf="revealedCodes.includes('AdditionalDiscount')" class="validity" [ngClass]="{ 'expired': isExpired('AdditionalDiscount') }">
+      {{ revealedCodes.includes('AdditionalDiscount') ? (isExpired('AdditionalDiscount') ? 'Expired' : '') : '' }}
+    </p>
+  </div>
+</ion-content>

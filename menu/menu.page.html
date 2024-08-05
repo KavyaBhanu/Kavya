@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Menu</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToCartPage()">
+        <ion-icon name="cart-outline"></ion-icon>
+        <span *ngIf="cartItemCount > 0" class="cart-count">{{ cartItemCount }}</span>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Search" (ionChange)="filterItems($event)"></ion-searchbar>
+
+
+  <div class="button-container">
+    <ion-segment scrollable value="all">
+      <ion-segment-button (click)="filterByCategory('Fruits')" class="filter-button" >Fruits</ion-segment-button>
+      <ion-segment-button  (click)="filterByCategory('Vegetables')" class="filter-button" >Vegetables</ion-segment-button>
+        <ion-segment-button  (click)="filterByCategory('Nuts')" class="filter-button" >Nuts</ion-segment-button>
+          <ion-segment-button  (click)="filterByCategory('Chocolate')" class="filter-button" >Chocolate</ion-segment-button>
+            <ion-segment-button  (click)="filterByCategory('Masala and Spices')" class="filter-button">Masala & Spices</ion-segment-button>
+            <ion-segment-button (click)="filterByCategory('Flour')" class="filter-button" >Flour</ion-segment-button>    
+          <ion-segment-button (click)="filterByCategory('Rice')" class="filter-button" >Rice</ion-segment-button>
+          <ion-segment-button (click)="filterByCategory('Dairy')" class="filter-button" >Dairy Items</ion-segment-button>
+    </ion-segment>
+    </div>
+    
+    <ion-grid *ngIf="filteredFoodItems.length > 0; else noItemsFound">
+      <ion-row>
+        <ion-col size="6" *ngFor="let foodItem of filteredFoodItems">
+          <ion-card>
+            <img [src]="foodItem.imageUrl" alt="Food Image">
+            <ion-card-header>
+              <ion-card-title>{{ foodItem.name }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Price: {{ foodItem.priceINR }} INR / {{ foodItem.priceUSD }} USD
+            </ion-card-content>
+            <ion-card-footer>
+              <ion-button (click)="addToCart(foodItem)" expand="block">Add to Basket</ion-button>
+            </ion-card-footer>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div *ngIf="category">
+      Selected Category: {{ category }}
+    </div>
+    <ng-template #noItemsFound>
+      <div class="no-items-found">
+        No items found.
+      </div>
+    </ng-template>
+  </ion-content>

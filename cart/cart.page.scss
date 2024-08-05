@@ -1,0 +1,58 @@
+/* General Ionic Background and Text Colors */
+ion-header,
+ion-toolbar {
+  --background: #006400; /* Green background for the header */
+  --color: #fff; /* White text for better contrast */
+}
+
+ion-title {
+  color: #fff; /* Ensuring the title is white */
+}
+
+/* Buttons Styling */
+ion-button {
+  --background: #006400; /* Main button color */
+  --background-activated:#006400; /* Button color when tapped */
+  --background-focused: #006400; /* Button color when focused */
+  --border-color: #006400; /* Border color to match the button if needed */
+  --color: #fff; /* Text color for buttons */
+}
+
+/* For the 'Remove' button with color="danger", ensure it's still green */
+ion-button[color="danger"] {
+  --background: #ff5252; /* Adjust if you want a different color for removal */
+}
+
+/* Quantity Buttons */
+ion-button[color="medium"] {
+  --background: #9E9E9E; /* Medium color, adjust if needed */
+}
+
+/* Special Classes for Text and Background Colors */
+.quantity-value, .total-price {
+  color: #006400; /* Green text for quantity and total price */
+  font-weight: bold;
+  padding: 8px 0; /* Add some padding for better spacing */
+}
+
+/* Adjusting List and Item Colors */
+ion-list {
+  --background: #ffffff; /* White background for the list */
+}
+
+ion-item {
+  --background: #f0f0f0; /* Lighter shade for items */
+  --color:#006400; /* Green text inside items */
+}
+
+/* Empty Cart Styling */
+ion-card-content {
+  color: #006400; /* Green text for the empty cart message */
+  text-align: center; /* Centering the text */
+  font-size: 1.2em; /* Slightly larger text for emphasis */
+}
+
+/* Ensuring the thumbnail borders align with the theme */
+ion-thumbnail {
+  --border-color: #006400; /* Green border for thumbnails */
+}

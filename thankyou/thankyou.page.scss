@@ -1,0 +1,13 @@
+/* Background styles */
+ion-content {
+  --background: linear-gradient(to bottom, #93e07c, #375c4e); /* Updated gradient from Tomato to Gold */
+}
+
+/* Text styles */
+.thank-you-message {
+  color: #000; /* Changed text color to black for better contrast with the new background */
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50%;
+}

@@ -1,0 +1,62 @@
+/* Changing the toolbar and header color */
+ion-header {
+  --ion-background-color: #006400;
+}
+
+ion-toolbar {
+  --background: #006400;
+}
+
+/* Styling the title to ensure it's visible against the green background */
+ion-title {
+  color: white;
+}
+
+/* Button styles */
+ion-button {
+  --background: #006400; /* Primary button color */
+  --background-activated: #004d00; /* Darker shade for the activated state */
+  --background-focused: #004d00; /* Darker shade for the focused state */
+  --background-hover: #004d00; /* Darker shade for hover state */
+  color: white;
+}
+
+/* When button is disabled, make it a lighter green instead of the default gray */
+ion-button[disabled] {
+  --background: #4caf50; /* Lighter green */
+}
+
+/* Styling for the divider in the payment options section */
+ion-item-divider {
+  --background: #004d00; /* Darker green for contrast */
+  color: white;
+}
+
+/* Styling for the text color inside ion-item for error messages, etc. */
+ion-text {
+  color: #006400; /* Keeping consistent with the green theme */
+}
+
+/* Error message color adjustment */
+ion-text[color="danger"] {
+  --ion-color-base: #ff3333; /* Bright red for visibility */
+}
+
+/* Radio button color customization */
+ion-radio {
+  --color: #006400; /* Green radio buttons */
+  --color-checked: #004d00; /* Darker green when checked */
+}
+/* Custom Green Button Styles */
+.green-btn {
+  --background: #006400; /* Green color for button background */
+  --background-activated: #004d00; /* Darker green for activated state */
+  --background-focused: #004d00; /* Darker green for focused state */
+  --background-hover: #004d00; /* Darker green for hover state */
+  color: white; /* White text color */
+}
+
+.green-btn-disabled {
+  --background: #4caf50; /* Lighter green for disabled state */
+  color: white; /* White text color */
+}

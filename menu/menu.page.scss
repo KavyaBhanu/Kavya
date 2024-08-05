@@ -1,0 +1,77 @@
+/* Overall Theme and Background Color */
+ion-content {
+  --ion-background-color: #f0f0f5;
+}
+
+/* Toolbar and Title Styling */
+ion-toolbar {
+  --background: #006400; /* Green background for the toolbar */
+}
+
+ion-title {
+  color: white; /* White title text for contrast */
+}
+
+/* Back Button Customization */
+ion-back-button {
+  color: white; /* White back button */
+}
+
+/* Cart Icon and Count */
+ion-button {
+  color: white; /* For the cart icon and text */
+}
+
+.cart-count {
+  background-color: red; /* Red background for the cart count */
+  color: white; /* White text color for cart count */
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8em;
+  position: relative;
+  top: -10px;
+  right: 10px;
+}
+
+/* Searchbar Styling */
+ion-searchbar {
+  --background: white; /* White background for the search bar */
+  --placeholder-color: #006400; /* Green placeholder text */
+  --icon-color: #006400; /* Green search icon */
+}
+
+/* Segment Button Styling */
+ion-segment {
+  --background: #f0f0f5; /* Background of the segment */
+  --indicator-color: #006400; /* Color of the indicator */
+  --color-checked: white; /* Text color when selected */
+}
+
+.filter-button {
+  --color: #006400; /* Green text for unselected state */
+}
+
+/* Card Styling */
+ion-card {
+  --background: white; /* White background for the cards */
+}
+
+ion-card-title {
+  color: #006400; /* Green text for the card titles */
+}
+
+ion-card-content,
+ion-card-footer {
+  color: #333; /* Dark text for content and footer for better readability */
+}
+
+ion-button {
+  --background: #006400; /* Green background for buttons */
+}
+
+/* No Items Found Styling */
+.no-items-found {
+  color: #006400; /* Green text for 'No items found.' message */
+  text-align: center;
+  margin-top: 20px;
+}

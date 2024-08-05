@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="cartItems.length > 0; else emptyCart">
+    <ion-list>
+      <ion-item *ngFor="let item of cartItems">
+        <ion-thumbnail slot="start">
+          <img [src]="item.imageUrl" alt="Food Image">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ item.name }}</h2>
+          <p>Price: ₹{{ item.priceINR }} INR / {{ item.priceUSD }} USD</p> <!-- Updated here -->
+          <ion-button (click)="decreaseQuantity(item)" color="medium" size="small" slot="start">-</ion-button>
+          <span>{{ item.quantity }}</span>
+          <ion-button (click)="increaseQuantity(item)" color="medium" size="small" slot="end">+</ion-button>
+          <div class="quantity-value">
+            Total Price: ₹{{ item.quantity * item.priceINR }} <!-- Updated here -->
+          </div>
+        </ion-label>
+        <ion-button (click)="removeFromCart(item)" color="danger" slot="end">Remove</ion-button>
+      </ion-item>
+    </ion-list>
+    <div class="total-price">
+      Total Price: ₹{{ getTotalPrice() }} <!-- Updated here -->
+    </div>
+    <ion-button expand="full" (click)="placeOrder()">Place Your Order</ion-button>
+  </ng-container>
+  <ng-template #emptyCart>
+    <ion-row justify-content-center align-items-center style="height: 100%;">
+      <ion-col size="12" text-center>
+        <ion-card>
+          <ion-card-content>
+            Your Basket is empty.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ng-template>
+</ion-content>

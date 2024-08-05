@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input type="text" placeholder="First Name" [(ngModel)]="firstName" [disabled]="!editMode" (ionChange)="validateFirstName()"></ion-input>
+    <ion-item *ngIf="invalidFirstName" lines="none">
+      <ion-text color="danger">Invalid First Name</ion-text>
+    </ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Last Name" [(ngModel)]="lastName" [disabled]="!editMode" (ionChange)="validateLastName()"></ion-input>
+    <ion-item *ngIf="invalidLastName" lines="none">
+      <ion-text color="danger">Invalid Last Name</ion-text>
+    </ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">House No/Flat No/Block No</ion-label>
+    <ion-input type="text" [(ngModel)]="houseNo" [disabled]="!editMode"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Apartment/Road/Area</ion-label>
+    <ion-input type="text" [(ngModel)]="apartmentRoadArea" [disabled]="!editMode"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Pin Code</ion-label>
+    <ion-input type="text" [(ngModel)]="pinCode" [disabled]="!editMode" (ionChange)="fetchLocation()"></ion-input>
+    <ion-item *ngIf="invalidPinCode" lines="none">
+      <ion-text color="danger">Invalid Pin Code</ion-text>
+    </ion-item>
+  </ion-item>
+
+  <ion-item *ngIf="district && state">
+    <ion-label>District</ion-label>
+    <ion-input type="text" [(ngModel)]="district" [disabled]="!editMode"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="district && state">
+    <ion-label>State</ion-label>
+    <ion-input type="text" [(ngModel)]="state" [disabled]="!editMode"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Phone Number</ion-label>
+    <ion-input type="tel" [(ngModel)]="phoneNumber" [disabled]="!editMode" (ionChange)="validatePhoneNumber()"></ion-input>
+    <ion-item *ngIf="invalidPhoneNumber" lines="none">
+      <ion-text color="danger">Invalid Phone Number</ion-text>
+    </ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Alternate Phone Number</ion-label>
+    <ion-input type="tel" [(ngModel)]="alternatePhoneNumber" [disabled]="!editMode" (ionChange)="validateAlternatePhoneNumber()"></ion-input>
+    <ion-item *ngIf="invalidAlternatePhoneNumber" lines="none">
+      <ion-text color="danger">Invalid Alternate Phone Number</ion-text>
+    </ion-item>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Address Type</ion-label>
+    <ion-select [(ngModel)]="addressType" [disabled]="!editMode">
+      <ion-select-option value="home">Home</ion-select-option>
+      <ion-select-option value="work">Work</ion-select-option>
+      <ion-select-option value="others">Others</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" color="primary" class="confirm-location-button" (click)="confirmLocation()" [disabled]="!editMode">Confirm Location</ion-button>
+
+  <div *ngIf="confirmed" class="address-display">
+    <!-- Display all address details here -->
+    <ion-label>Address Details:</ion-label>
+    <ion-text>{{ savedAddress.firstName }} {{ savedAddress.lastName }}, {{ savedAddress.houseNo }}, {{ savedAddress.apartmentRoadArea }}, {{ savedAddress.district }}, {{ savedAddress.state }}, {{ savedAddress.phoneNumber }}, {{ savedAddress.alternatePhoneNumber }}, {{ savedAddress.addressType }}</ion-text>
+    <ion-button expand="block" color="secondary" class="edit-button" (click)="editAddress()" *ngIf="!editMode">Edit</ion-button>
+    <ion-button expand="block" color="danger" class="delete-button" (click)="deleteAddress()" *ngIf="!editMode">Delete</ion-button>
+  </div>
+</ion-content>

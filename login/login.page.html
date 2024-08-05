@@ -1,0 +1,36 @@
+<ion-img src="\assets\login1.jpg"></ion-img>
+<ion-content>
+  <ion-content class="ion-padding">
+    <div class="fixed-label-container">
+      <ion-card style="text-align: center;">
+        <ion-card-title>
+          Welcome back
+          <p>Login to explore</p>
+        </ion-card-title>
+     
+  
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <!-- Scrolling content -->
+      <ion-item>
+        <ion-label></ion-label>
+        <ion-icon name="person"></ion-icon> 
+        <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label></ion-label><ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+  
+      <ion-button type="submit" expand="full">Login</ion-button>
+    </form>
+  
+    <div class="resisterLink">
+      <!-- Fixed link at the bottom -->
+      <p class="p" style="color: black; text-align: center; ">Don't have an account? <a [routerLink]="['/register']" style="color: blue">Register</a></p>
+    </div>
+  </ion-card>
+  <p class="forgot-password" (click)="redirectToForgotPassword()"></p>
+
+</div>
+  </ion-content>

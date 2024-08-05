@@ -1,0 +1,24 @@
+.zoom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh; /* Example: Full viewport height */
+}
+
+.zoom-image {
+  max-width: 100%;
+  max-height: fit-content;
+  transition: transform 0.2s; /* Smooth transition for the transform effect */
+  touch-action: none; /* Disable default handling of touch events */
+}
+
+/* Ensuring the background color is applied */
+ion-content {
+  --background: rgba(34, 109, 3, 1) ;
+}
+.green-fab {
+  --background: green; /* Sets the background color of the button */
+  --color: white; /* Sets the icon color inside the button */
+}
+

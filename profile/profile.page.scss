@@ -1,0 +1,65 @@
+/* Styling for the header */
+ion-header {
+  --background: #006400; /* Green background for the header */
+}
+
+ion-toolbar {
+  --background: #006400; /* Ensures the toolbar matches the header's background */
+  color: white; /* Adjusts the title and button color for better visibility */
+}
+
+/* If you want to style the back button specifically */
+ion-back-button {
+  --color: white; /* Ensures back button is visible against the green background */
+}
+
+/* Styling for the menu button */
+ion-menu-button {
+  --color: white; /* Ensures menu button is visible against the green background */
+}
+
+/* Optional: If you want to adjust the translucent effect */
+ion-header[translucent] {
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.green-button {
+  --background: #006400; /* Dark green */
+  --background-activated: #004d00; /* Slightly darker green when pressed */
+  --background-focused: #005900; /* Intermediate green when focused */
+  --background-hover: #005900; /* Intermediate green on hover for desktop */
+  --color: white; /* Text color */
+}
+
+
+.profile-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-image {
+    margin-right: 20px; /* Adjust spacing as needed */
+  }
+  
+  .profile-details {
+    flex-grow: 1; /* Allows the details to grow to fill available space */
+  }
+  
+  .profile-label {
+    font-weight: bold;
+  }
+  
+  .edit-icon {
+    font-size: 24px; /* Adjust icon size as needed */
+    cursor: pointer;
+  }
+  ion-text ion-icon {
+    padding-left: 0;
+  }
+  .center-button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  

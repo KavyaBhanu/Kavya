@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBackToCart()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Place Your Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <!-- Display the selected items in the cart -->
+    <ion-item *ngFor="let item of selectedItems; let i = index">
+      <ion-thumbnail slot="start">
+        <img [src]="item.imageUrl" alt="Food Image">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>Price: ₹{{ item.priceINR }}</p> <!-- Updated here -->
+        <!-- Quantity selection buttons -->
+        <ion-button (click)="addQuantity(i)" size="small">+</ion-button>
+        <span>{{ item.quantity }}</span>
+        <ion-button (click)="removeQuantity(i)" size="small">-</ion-button>
+        <!-- End quantity selection buttons -->
+        <!-- Add any additional information about the item here -->
+      </ion-label>
+      <!-- Remove button -->
+      <ion-button (click)="removeFromOrder(i)" color="danger" slot="end">Remove</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Display the total price and order now button -->
+  <div class="div-total-price" style="display: flex; justify-content: space-between;">
+    <div>Total Price: ₹{{ totalPrice }}</div> <!-- Updated here -->
+    <ion-button size="small" (click)="goToAddAddressPage()">Place Your Order</ion-button>
+  </div>
+
+  
+  <!-- Display the map -->
+  <div id="map"></div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="full" (click)="selectAddress()">Select Address</ion-button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,71 @@
+<ion-header translucent="true">
+  <ion-toolbar color="white">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-img src="assets/green logo1.png" style="height: 60px;"></ion-img>
+    </ion-buttons>
+    <ion-title>Grocery Market</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="featured-section">
+    <div class="welcome-label">Welcome To Green Grocer</div>
+    <div class="horizontal-scroll-container">
+      <div class="horizontal-scroll-content">
+        <img src="assets/grocer2.png" alt="Nuts">
+        <img src="assets/grocer1.png" alt="Fruits">
+        <img src="assets/grocer3.png" alt="Rice">
+        <img src="assets/grocer4.png" alt="Rice">
+      </div>
+    </div>
+</div>
+
+<div class="topic">
+  What would you like to do today?
+</div>
+
+<ion-grid>
+  <ion-row>
+
+<ion-col size="3" *ngFor="let store of store_types">
+      <ion-card (click)="navigate(store)">
+        <ion-thumbnail>
+          <img [src]="'assets/' + store?.icon" />
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap ion-text-center">{{store?.name}}</ion-label>
+      </ion-card>
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+
+
+</ion-content>
+
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="categories" routerLink="/menu">
+      <ion-icon name="grid-outline"></ion-icon>
+      <ion-label>Categories</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="basket" routerLink="/cart">
+      <ion-icon name="cart-outline"></ion-icon>
+      <ion-label>Basket</ion-label>
+    </ion-tab-button>
+
+    <!-- Added Profile Tab -->
+    <ion-tab-button tab="profile" routerLink="/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+>

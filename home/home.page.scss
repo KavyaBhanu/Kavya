@@ -1,0 +1,130 @@
+/* General Enhancements */
+body, ion-content {
+  --ion-background-color: #f0f0f5;
+}
+
+.featured-section h2,
+.category-section h2 {
+  text-align: center;
+  padding: 20px;
+  color: #006400; /* Changed to green */
+}
+
+/* Horizontal Scroll */
+.horizontal-scroll-container {
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.horizontal-scroll-content {
+  display: flex;
+}
+
+.horizontal-scroll-content img {
+  width: 80%;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 2px solid #006400; /* Added border color */
+  transition: transform 0.3s ease;
+}
+
+.horizontal-scroll-content img:last-child {
+  margin-right: 0;
+}
+
+.horizontal-scroll-content img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Category Grid Enhancements */
+ion-item {
+  --background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 5px 5px 15px #d1d1d1,
+              -5px -5px 15px #ffffff;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+ion-avatar img {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #006400; /* Ensuring green border */
+}
+
+/* Overriding Ionic toolbar color */
+ion-toolbar {
+  --background: #006400;
+  --ion-color-base: #006400;
+}
+
+/* Customizing the ion-title color */
+ion-title {
+  color: white;
+  text-align: center;
+}
+
+/* Customizing the ion-label color within ion-item */
+ion-item ion-label {
+  color: #006400;
+}
+
+/* Customizing ion-tab-button */
+ion-tab-button {
+  --color-selected: white;
+  --color: white;
+  --background: #006400;
+}
+
+/* Customizing the ion-button (if any) */
+ion-button {
+  --background: #006400;
+  --background-activated: #004d00; /* Darker shade for activated state */
+  --background-focused: #004d00; /* Darker shade for focused state */
+  --color: white;
+}
+
+/* Adjusting ion-menu-button color */
+ion-menu-button {
+  color: white;
+}
+
+/* Custom color for icons */
+ion-icon {
+  color: white;
+}
+.welcome-label {
+  display: block;
+  font-size: 20px;
+  color: #006400;
+  text-align: center;
+  padding: 20px 0;
+}
+
+ion-grid {
+  margin: 2vh 10px 0 5px;
+  ion-row {
+      ion-col {
+          padding: 0 !important;
+          ion-card {
+              border: 0.001vh solid var(--ion-color-medium);
+              height: 100px;
+              width: 100%;
+              margin: 0 !important;
+              padding: 0 !important;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              ion-label {
+                  font-size: 0.7rem;
+                  font-weight: 600;
+                  margin-top: 5px;
+              }
+              ion-thumbnail {
+                  height: 7vh;
+              }
+          }
+      }
+  }
+}

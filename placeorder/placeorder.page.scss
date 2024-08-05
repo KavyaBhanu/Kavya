@@ -1,0 +1,48 @@
+ion-content {
+  height: 100%;
+}
+
+#map {
+  height: 300px; /* Adjust the height as needed */
+  margin-top: 20px; /* Add some margin to separate from other content */
+}
+/* Changing the toolbar background and text color */
+ion-toolbar {
+  --background: #006400; /* A shade of green */
+  --color: white; /* White text color */
+}
+
+/* Styling ion-buttons to have a green theme */
+ion-button {
+  --background: #006400; /* Button background color */
+  --background-activated: #006400; /* Darker green when activated/clicked */
+  --background-hover: #006400; /* Darker green on hover for desktop */
+  --color: white; /* Text color */
+}
+
+/* If you want a specific button to have a different shade of green or any other color */
+ion-button.color-danger {
+  --background: #D32F2F; /* For instance, keeping the remove button red */
+}
+
+/* Adjusting the footer's background and text color */
+ion-footer {
+  --background:#006400; /* Darker shade of green for the footer */
+  --color: white;
+}
+
+/* For the map container, if you want to add a border or some indication */
+
+
+/* Total price and order now button container */
+.div-total-price {
+  background-color: #E8F5E9; /* Very light green background */
+  padding: 10px; /* Padding for some space inside */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Optionally, customize the ion-item for a subtle green touch */
+ion-item {
+  --border-color: #C8E6C9; /* Light green border */
+  --background: #E8F5E9; /* Very light green background */
+}
